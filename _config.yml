@@ -3,7 +3,7 @@ description: "CaringBridge's software engineering blog."
 baseurl: ""
 url: "http://caringbridge.github.io"
 
-exclude: ["vendor", ".git", ".gitignore"]
+exclude: ["vendor", ".git", ".gitignore", "Gemfile", "Gemfile.lock"]
 
 # Build settings
 markdown: kramdown
@@ -23,4 +23,3 @@ defaults:
 safe: true
 timezone: America/Chicago
 encoding: utf-8
-
