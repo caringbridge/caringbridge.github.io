@@ -1,7 +1,9 @@
 title: CaringBridge Engineering
 description: "CaringBridge's software engineering blog."
 baseurl: ""
-url: "http://yourdomain.com"
+url: "http://caringbridge.github.io"
+
+exclude: ["vendor", ".git", ".gitignore"]
 
 # Build settings
 markdown: kramdown
