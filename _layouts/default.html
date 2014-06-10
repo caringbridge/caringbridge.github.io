@@ -1,29 +1,15 @@
-<!doctype html>
-<head>
-  <meta charset="utf-8">
-  <title>{{page.title}} :: {{site.title}}</title>
-  <link href="/css/screen.css" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <div class="container">
-      <h1><a href="/">CaringBridge Engineering</a></h1>
-    </div>
-  </header>
-  <div id="content">
-    <div class="container">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include sidebar.html %}
+
+    <div class="content container">
       {{ content }}
     </div>
-  </div>
-  <footer>
-    <div class="container">
-      <h2>Footer</h2>
-      <p>Here's our CI status:</p>
-      <p>
-      <a href="https://travis-ci.org/caringbridge/caringbridge.github.io"><img src="https://travis-ci.org/caringbridge/caringbridge.github.io.svg"></a>
-      </p>
 
-    </div>
-  </footer>
-</body>
+  </body>
 </html>

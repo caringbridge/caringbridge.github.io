@@ -1,502 +1,1120 @@
-/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
-/**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
+/*
+ *                        ___
+ *                       /\_ \
+ *  _____     ___     ___\//\ \      __
+ * /\ '__`\  / __`\  / __`\ \ \   /'__`\
+ * \ \ \_\ \/\ \_\ \/\ \_\ \_\ \_/\  __/
+ *  \ \ ,__/\ \____/\ \____//\____\ \____\
+ *   \ \ \/  \/___/  \/___/ \/____/\/____/
+ *    \ \_\
+ *     \/_/
+ *
+ * Designed, built, and released under MIT license by @mdo. Learn more at
+ * https://github.com/poole/poole.
  */
-/* line 9, ../_sass/_normalize.scss */
-html {
-  font-family: sans-serif;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+/*
+ * Contents
+ *
+ * Body resets
+ * Custom type
+ * Messages
+ * Container
+ * Masthead
+ * Posts and pages
+ * Pagination
+ * Reverse layout
+ * Themes
+ */
+/*
+ * Body resets
+ *
+ * Update the foundational and global aspects of the page.
+ */
+/* line 38, ../_sass/_poole.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-/**
- * Remove default margin.
- */
-/* line 19, ../_sass/_normalize.scss */
+/* line 45, ../_sass/_poole.scss */
+html,
 body {
   margin: 0;
+  padding: 0;
 }
 
-/* HTML5 display definitions
-   ========================================================================== */
-/**
- * Correct `block` display not defined for any HTML5 element in IE 8/9.
- * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
- * Correct `block` display not defined for `main` in IE 11.
+/* line 50, ../_sass/_poole.scss */
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (min-width: 38rem) {
+  /* line 56, ../_sass/_poole.scss */
+  html {
+    font-size: 20px;
+  }
+}
+/* line 61, ../_sass/_poole.scss */
+body {
+  color: #515151;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* No `:visited` state is required by default (browsers will use `a`) */
+/* line 69, ../_sass/_poole.scss */
+a {
+  color: #268bd2;
+  text-decoration: none;
+}
+
+/* `:focus` is linked to `:hover` for basic accessibility */
+/* line 75, ../_sass/_poole.scss */
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* Headings */
+/* line 80, ../_sass/_poole.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-weight: bold;
+  line-height: 1.25;
+  color: #313131;
+  text-rendering: optimizeLegibility;
+}
+
+/* line 87, ../_sass/_poole.scss */
+h1 {
+  font-size: 2rem;
+}
+
+/* line 90, ../_sass/_poole.scss */
+h2 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+/* line 94, ../_sass/_poole.scss */
+h3 {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+}
+
+/* line 98, ../_sass/_poole.scss */
+h4, h5, h6 {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+/* Body text */
+/* line 104, ../_sass/_poole.scss */
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* line 109, ../_sass/_poole.scss */
+strong {
+  color: #303030;
+}
+
+/* Lists */
+/* line 115, ../_sass/_poole.scss */
+ul, ol, dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* line 120, ../_sass/_poole.scss */
+dt {
+  font-weight: bold;
+}
+
+/* line 123, ../_sass/_poole.scss */
+dd {
+  margin-bottom: .5rem;
+}
+
+/* Misc */
+/* line 128, ../_sass/_poole.scss */
+hr {
+  position: relative;
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #fff;
+}
+
+/* line 136, ../_sass/_poole.scss */
+abbr {
+  font-size: 85%;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+}
+
+/* line 142, ../_sass/_poole.scss */
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted #e5e5e5;
+}
+
+/* Code */
+/* line 149, ../_sass/_poole.scss */
+code,
+pre {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+/* line 152, ../_sass/_poole.scss */
+code {
+  padding: .25em .5em;
+  font-size: 85%;
+  color: #bf616a;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+}
+
+/* line 159, ../_sass/_poole.scss */
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: .8rem;
+  line-height: 1.4;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f9f9f9;
+}
+
+/* line 172, ../_sass/_poole.scss */
+pre code {
+  padding: 0;
+  font-size: 100%;
+  color: inherit;
+  background-color: transparent;
+}
+
+/* line 178, ../_sass/_poole.scss */
+.highlight {
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+/* line 182, ../_sass/_poole.scss */
+.highlight pre {
+  margin-bottom: 0;
+}
+
+/* Quotes */
+/* line 187, ../_sass/_poole.scss */
+blockquote {
+  padding: .5rem 1rem;
+  margin: .8rem 0;
+  color: #7a7a7a;
+  border-left: .25rem solid #e5e5e5;
+}
+
+/* line 193, ../_sass/_poole.scss */
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 30rem) {
+  /* line 197, ../_sass/_poole.scss */
+  blockquote {
+    padding-right: 5rem;
+    padding-left: 1.25rem;
+  }
+}
+/* line 203, ../_sass/_poole.scss */
+img {
+  display: block;
+  margin: 0 0 1rem;
+  border-radius: 5px;
+  max-width: 100%;
+}
+
+/* Tables */
+/* line 211, ../_sass/_poole.scss */
+table {
+  margin-bottom: 1rem;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-collapse: collapse;
+}
+
+/* line 218, ../_sass/_poole.scss */
+td,
+th {
+  padding: .25rem .5rem;
+  border: 1px solid #e5e5e5;
+}
+
+/* line 223, ../_sass/_poole.scss */
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+  background-color: #f9f9f9;
+}
+
+/*
+ * Custom type
+ *
+ * Extend paragraphs with `.lead` for larger introductory text.
  */
-/* line 43, ../_sass/_normalize.scss */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
+/* line 234, ../_sass/_poole.scss */
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/*
+ * Messages
+ *
+ * Show alert messages to users. You may add it to single elements like a `<p>`,
+ * or to a parent if there are multiple elements to show.
+ */
+/* line 247, ../_sass/_poole.scss */
+.message {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  color: #717171;
+  background-color: #f9f9f9;
+}
+
+/*
+ * Container
+ *
+ * Center the page content.
+ */
+/* line 261, ../_sass/_poole.scss */
+.container {
+  max-width: 38rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+ * Masthead
+ *
+ * Super small header above the content for site name and short description.
+ */
+/* line 276, ../_sass/_poole.scss */
+.masthead {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+}
+
+/* line 281, ../_sass/_poole.scss */
+.masthead-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #505050;
+}
+
+/* line 286, ../_sass/_poole.scss */
+.masthead-title a {
+  color: #505050;
+}
+
+/* line 289, ../_sass/_poole.scss */
+.masthead-title small {
+  font-size: 75%;
+  font-weight: 400;
+  color: #c0c0c0;
+  letter-spacing: 0;
+}
+
+/*
+ * Posts and pages
+ *
+ * Each post is wrapped in `.post` and is used on default and post layouts. Each
+ * page is wrapped in `.page` and is only used on the page layout.
+ */
+/* line 305, ../_sass/_poole.scss */
+.page,
+.post {
+  margin-bottom: 4em;
+}
+
+/* Blog post or page title */
+/* line 312, ../_sass/_poole.scss */
+.page-title,
+.post-title,
+.post-title a {
+  color: #303030;
+}
+
+/* line 316, ../_sass/_poole.scss */
+.page-title,
+.post-title {
+  margin-top: 0;
+}
+
+/* Meta data line below post title */
+/* line 321, ../_sass/_poole.scss */
+.post-date {
+  display: block;
+  margin-top: -.5rem;
+  margin-bottom: 1rem;
+  color: #9a9a9a;
+}
+
+/* Related posts */
+/* line 329, ../_sass/_poole.scss */
+.related {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid #eee;
+}
+
+/* line 334, ../_sass/_poole.scss */
+.related-posts {
+  padding-left: 0;
+  list-style: none;
+}
+
+/* line 338, ../_sass/_poole.scss */
+.related-posts h3 {
+  margin-top: 0;
+}
+
+/* line 341, ../_sass/_poole.scss */
+.related-posts li small {
+  font-size: 75%;
+  color: #999;
+}
+
+/* line 345, ../_sass/_poole.scss */
+.related-posts li a:hover {
+  color: #268bd2;
+  text-decoration: none;
+}
+
+/* line 349, ../_sass/_poole.scss */
+.related-posts li a:hover small {
+  color: inherit;
+}
+
+/*
+ * Pagination
+ *
+ * Super lightweight (HTML-wise) blog pagination. `span`s are provide for when
+ * there are no more previous or next posts to show.
+ */
+/* line 361, ../_sass/_poole.scss */
+.pagination {
+  overflow: hidden;
+  /* clearfix */
+  margin-left: -1rem;
+  margin-right: -1rem;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Pagination items can be `span`s or `a`s */
+/* line 371, ../_sass/_poole.scss */
+.pagination-item {
+  display: block;
+  padding: 1rem;
+  border: 1px solid #eee;
+}
+
+/* line 376, ../_sass/_poole.scss */
+.pagination-item:first-child {
+  margin-bottom: -1px;
+}
+
+/* Only provide a hover state for linked pagination items */
+/* line 381, ../_sass/_poole.scss */
+a.pagination-item:hover {
+  background-color: #f5f5f5;
+}
+
+@media (min-width: 30rem) {
+  /* line 386, ../_sass/_poole.scss */
+  .pagination {
+    margin: 3rem 0;
+  }
+
+  /* line 389, ../_sass/_poole.scss */
+  .pagination-item {
+    float: left;
+    width: 50%;
+  }
+
+  /* line 393, ../_sass/_poole.scss */
+  .pagination-item:first-child {
+    margin-bottom: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  /* line 398, ../_sass/_poole.scss */
+  .pagination-item:last-child {
+    margin-left: -1px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+/*
+ *  __                  __
+ * /\ \                /\ \
+ * \ \ \___   __  __   \_\ \     __
+ *  \ \  _ `\/\ \/\ \  /'_` \  /'__`\
+ *   \ \ \ \ \ \ \_\ \/\ \_\ \/\  __/
+ *    \ \_\ \_\/`____ \ \___,_\ \____\
+ *     \/_/\/_/`/___/> \/__,_ /\/____/
+ *                /\___/
+ *                \/__/
+ *
+ * Designed, built, and released under MIT license by @mdo. Learn more at
+ * https://github.com/poole/hyde.
+ */
+/*
+ * Contents
+ *
+ * Global resets
+ * Sidebar
+ * Container
+ * Reverse layout
+ * Themes
+ */
+/*
+ * Global resets
+ *
+ * Update the foundational and global aspects of the page.
+ */
+/* line 34, ../_sass/_hyde.scss */
+html {
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+}
+
+@media (min-width: 48rem) {
+  /* line 38, ../_sass/_hyde.scss */
+  html {
+    font-size: 16px;
+  }
+}
+@media (min-width: 58rem) {
+  /* line 43, ../_sass/_hyde.scss */
+  html {
+    font-size: 20px;
+  }
+}
+/*
+ * Sidebar
+ *
+ * Flexible banner for housing site name, intro, and "footer" content. Starts
+ * out above content in mobile and later moves to the side with wider viewports.
+ */
+/* line 56, ../_sass/_hyde.scss */
+.sidebar {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #74cbc8;
+}
+
+@media (min-width: 48rem) {
+  /* line 63, ../_sass/_hyde.scss */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 18rem;
+    text-align: left;
+  }
+}
+/* Sidebar links */
+/* line 74, ../_sass/_hyde.scss */
+.sidebar a {
+  color: #fff;
+}
+
+/* About section */
+/* line 79, ../_sass/_hyde.scss */
+.sidebar-about h1 {
+  color: #fff;
+  margin-top: 0;
+  font-family: "Abril Fatface", serif;
+  font-size: 3.25rem;
+}
+
+/* Sidebar nav */
+/* line 87, ../_sass/_hyde.scss */
+.sidebar-nav {
+  padding-left: 0;
+  list-style: none;
+}
+
+/* line 91, ../_sass/_hyde.scss */
+.sidebar-nav-item {
   display: block;
 }
 
-/**
- * 1. Correct `inline-block` display not defined in IE 8/9.
- * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
- */
-/* line 55, ../_sass/_normalize.scss */
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-  /* 1 */
-  vertical-align: baseline;
-  /* 2 */
+/* line 95, ../_sass/_hyde.scss */
+a.sidebar-nav-item:hover,
+a.sidebar-nav-item:focus {
+  text-decoration: underline;
 }
 
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-/* line 65, ../_sass/_normalize.scss */
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/**
- * Address `[hidden]` styling not present in IE 8/9/10.
- * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
- */
-/* line 76, ../_sass/_normalize.scss */
-[hidden],
-template {
-  display: none;
-}
-
-/* Links
-   ========================================================================== */
-/**
- * Remove the gray background color from active links in IE 10.
- */
-/* line 87, ../_sass/_normalize.scss */
-a {
-  background: transparent;
-}
-
-/**
- * Improve readability when focused and also mouse hovered in all browsers.
- */
-/* line 96, ../_sass/_normalize.scss */
-a:active,
-a:hover {
-  outline: 0;
-}
-
-/* Text-level semantics
-   ========================================================================== */
-/**
- * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
- */
-/* line 107, ../_sass/_normalize.scss */
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-/**
- * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
- */
-/* line 116, ../_sass/_normalize.scss */
-b,
-strong {
+/* line 98, ../_sass/_hyde.scss */
+.sidebar-nav-item.active {
   font-weight: bold;
 }
 
-/**
- * Address styling not present in Safari and Chrome.
+/* Sticky sidebar
+ *
+ * Add the `sidebar-sticky` class to the sidebar's container to affix it the
+ * contents to the bottom of the sidebar in tablets and up.
  */
-/* line 124, ../_sass/_normalize.scss */
-dfn {
+@media (min-width: 48rem) {
+  /* line 109, ../_sass/_hyde.scss */
+  .sidebar-sticky {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+}
+/* Container
+ *
+ * Align the contents of the site above the proper threshold with some margin-fu
+ * with a 25%-wide `.sidebar`.
+ */
+/* line 124, ../_sass/_hyde.scss */
+.content {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 48rem) {
+  /* line 130, ../_sass/_hyde.scss */
+  .content {
+    max-width: 38rem;
+    margin-left: 20rem;
+    margin-right: 2rem;
+  }
+}
+@media (min-width: 64rem) {
+  /* line 138, ../_sass/_hyde.scss */
+  .content {
+    margin-left: 22rem;
+    margin-right: 4rem;
+  }
+}
+/*
+ * Reverse layout
+ *
+ * Flip the orientation of the page by placing the `.sidebar` on the right.
+ */
+@media (min-width: 48rem) {
+  /* line 152, ../_sass/_hyde.scss */
+  .layout-reverse .sidebar {
+    left: auto;
+    right: 0;
+  }
+
+  /* line 156, ../_sass/_hyde.scss */
+  .layout-reverse .content {
+    margin-left: 2rem;
+    margin-right: 20rem;
+  }
+}
+@media (min-width: 64rem) {
+  /* line 163, ../_sass/_hyde.scss */
+  .layout-reverse .content {
+    margin-left: 4rem;
+    margin-right: 22rem;
+  }
+}
+/*
+ * Themes
+ *
+ * As of v1.1, Hyde includes optional themes to color the sidebar and links
+ * within blog posts. To use, add the class of your choosing to the `body`.
+ */
+/* Base16 (http://chriskempson.github.io/base16/#default) */
+/* Red */
+/* line 181, ../_sass/_hyde.scss */
+.theme-base-08 .sidebar {
+  background-color: #ac4142;
+}
+
+/* line 185, ../_sass/_hyde.scss */
+.theme-base-08 .content a,
+.theme-base-08 .related-posts li a:hover {
+  color: #ac4142;
+}
+
+/* Orange */
+/* line 190, ../_sass/_hyde.scss */
+.theme-base-09 .sidebar {
+  background-color: #d28445;
+}
+
+/* line 194, ../_sass/_hyde.scss */
+.theme-base-09 .content a,
+.theme-base-09 .related-posts li a:hover {
+  color: #d28445;
+}
+
+/* Yellow */
+/* line 199, ../_sass/_hyde.scss */
+.theme-base-0a .sidebar {
+  background-color: #f4bf75;
+}
+
+/* line 203, ../_sass/_hyde.scss */
+.theme-base-0a .content a,
+.theme-base-0a .related-posts li a:hover {
+  color: #f4bf75;
+}
+
+/* Green */
+/* line 208, ../_sass/_hyde.scss */
+.theme-base-0b .sidebar {
+  background-color: #90a959;
+}
+
+/* line 212, ../_sass/_hyde.scss */
+.theme-base-0b .content a,
+.theme-base-0b .related-posts li a:hover {
+  color: #90a959;
+}
+
+/* Cyan */
+/* line 217, ../_sass/_hyde.scss */
+.theme-base-0c .sidebar {
+  background-color: #75b5aa;
+}
+
+/* line 221, ../_sass/_hyde.scss */
+.theme-base-0c .content a,
+.theme-base-0c .related-posts li a:hover {
+  color: #75b5aa;
+}
+
+/* Blue */
+/* line 226, ../_sass/_hyde.scss */
+.theme-base-0d .sidebar {
+  background-color: #6a9fb5;
+}
+
+/* line 230, ../_sass/_hyde.scss */
+.theme-base-0d .content a,
+.theme-base-0d .related-posts li a:hover {
+  color: #6a9fb5;
+}
+
+/* Magenta */
+/* line 235, ../_sass/_hyde.scss */
+.theme-base-0e .sidebar {
+  background-color: #aa759f;
+}
+
+/* line 239, ../_sass/_hyde.scss */
+.theme-base-0e .content a,
+.theme-base-0e .related-posts li a:hover {
+  color: #aa759f;
+}
+
+/* Brown */
+/* line 244, ../_sass/_hyde.scss */
+.theme-base-0f .sidebar {
+  background-color: #8f5536;
+}
+
+/* line 248, ../_sass/_hyde.scss */
+.theme-base-0f .content a,
+.theme-base-0f .related-posts li a:hover {
+  color: #8f5536;
+}
+
+/* line 1, ../_sass/_syntax.scss */
+.hll {
+  background-color: #ffffcc;
+}
+
+/*{ background: #f0f3f3; }*/
+/* line 3, ../_sass/_syntax.scss */
+.c {
+  color: #999;
+}
+
+/* Comment */
+/* line 4, ../_sass/_syntax.scss */
+.err {
+  color: #AA0000;
+  background-color: #ffaaaa;
+}
+
+/* Error */
+/* line 5, ../_sass/_syntax.scss */
+.k {
+  color: #006699;
+}
+
+/* Keyword */
+/* line 6, ../_sass/_syntax.scss */
+.o {
+  color: #555555;
+}
+
+/* Operator */
+/* line 7, ../_sass/_syntax.scss */
+.cm {
+  color: #0099FF;
   font-style: italic;
 }
 
-/**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari, and Chrome.
- */
-/* line 133, ../_sass/_normalize.scss */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+/* Comment.Multiline */
+/* line 8, ../_sass/_syntax.scss */
+.cp {
+  color: #009999;
 }
 
-/**
- * Address styling not present in IE 8/9.
- */
-/* line 142, ../_sass/_normalize.scss */
-mark {
-  background: #ff0;
-  color: #000;
+/* Comment.Preproc */
+/* line 9, ../_sass/_syntax.scss */
+.c1 {
+  color: #999;
 }
 
-/**
- * Address inconsistent and variable font size in all browsers.
- */
-/* line 151, ../_sass/_normalize.scss */
-small {
-  font-size: 80%;
+/* Comment.Single */
+/* line 10, ../_sass/_syntax.scss */
+.cs {
+  color: #999;
 }
 
-/**
- * Prevent `sub` and `sup` affecting `line-height` in all browsers.
- */
-/* line 160, ../_sass/_normalize.scss */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+/* Comment.Special */
+/* line 11, ../_sass/_syntax.scss */
+.gd {
+  background-color: #FFCCCC;
+  border: 1px solid #cc0000;
 }
 
-/* line 167, ../_sass/_normalize.scss */
-sup {
-  top: -0.5em;
+/* Generic.Deleted */
+/* line 12, ../_sass/_syntax.scss */
+.ge {
+  font-style: italic;
 }
 
-/* line 171, ../_sass/_normalize.scss */
-sub {
-  bottom: -0.25em;
+/* Generic.Emph */
+/* line 13, ../_sass/_syntax.scss */
+.gr {
+  color: red;
 }
 
-/* Embedded content
-   ========================================================================== */
-/**
- * Remove border when inside `a` element in IE 8/9/10.
- */
-/* line 182, ../_sass/_normalize.scss */
-img {
-  border: 0;
+/* Generic.Error */
+/* line 14, ../_sass/_syntax.scss */
+.gh {
+  color: #003300;
 }
 
-/**
- * Correct overflow not hidden in IE 9/10/11.
- */
-/* line 190, ../_sass/_normalize.scss */
-svg:not(:root) {
-  overflow: hidden;
+/* Generic.Heading */
+/* line 15, ../_sass/_syntax.scss */
+.gi {
+  background-color: #CCFFCC;
+  border: 1px solid #00cc00;
 }
 
-/* Grouping content
-   ========================================================================== */
-/**
- * Address margin not present in IE 8/9 and Safari.
- */
-/* line 201, ../_sass/_normalize.scss */
-figure {
-  margin: 1em 40px;
+/* Generic.Inserted */
+/* line 16, ../_sass/_syntax.scss */
+.go {
+  color: #aaaaaa;
 }
 
-/**
- * Address differences between Firefox and other browsers.
- */
-/* line 209, ../_sass/_normalize.scss */
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
+/* Generic.Output */
+/* line 17, ../_sass/_syntax.scss */
+.gp {
+  color: #000099;
 }
 
-/**
- * Contain overflow in all browsers.
- */
-/* line 219, ../_sass/_normalize.scss */
-pre {
-  overflow: auto;
+/* Generic.Prompt */
+/* Generic.Strong */
+/* line 19, ../_sass/_syntax.scss */
+.gu {
+  color: #003300;
 }
 
-/**
- * Address odd `em`-unit font size rendering in all browsers.
- */
-/* line 230, ../_sass/_normalize.scss */
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
+/* Generic.Subheading */
+/* line 20, ../_sass/_syntax.scss */
+.gt {
+  color: #99cc66;
 }
 
-/* Forms
-   ========================================================================== */
-/**
- * Known limitation: by default, Chrome and Safari on OS X allow very limited
- * styling of `select`, unless a `border` property is set.
- */
-/**
- * 1. Correct color not being inherited.
- *    Known issue: affects color of disabled elements.
- * 2. Correct font properties not being inherited.
- * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
- */
-/* line 254, ../_sass/_normalize.scss */
-button,
-input,
-optgroup,
-select,
-textarea {
-  color: inherit;
-  /* 1 */
-  font: inherit;
-  /* 2 */
-  margin: 0;
-  /* 3 */
+/* Generic.Traceback */
+/* line 21, ../_sass/_syntax.scss */
+.kc {
+  color: #006699;
 }
 
-/**
- * Address `overflow` set to `hidden` in IE 8/9/10/11.
- */
-/* line 264, ../_sass/_normalize.scss */
-button {
-  overflow: visible;
+/* Keyword.Constant */
+/* line 22, ../_sass/_syntax.scss */
+.kd {
+  color: #006699;
 }
 
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
- * Correct `select` style inheritance in Firefox.
- */
-/* line 276, ../_sass/_normalize.scss */
-button,
-select {
-  text-transform: none;
+/* Keyword.Declaration */
+/* line 23, ../_sass/_syntax.scss */
+.kn {
+  color: #006699;
 }
 
-/**
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- */
-/* line 291, ../_sass/_normalize.scss */
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
-  cursor: pointer;
-  /* 3 */
+/* Keyword.Namespace */
+/* line 24, ../_sass/_syntax.scss */
+.kp {
+  color: #006699;
 }
 
-/**
- * Re-set default cursor for disabled elements.
- */
-/* line 301, ../_sass/_normalize.scss */
-button[disabled],
-html input[disabled] {
-  cursor: default;
+/* Keyword.Pseudo */
+/* line 25, ../_sass/_syntax.scss */
+.kr {
+  color: #006699;
 }
 
-/**
- * Remove inner padding and border in Firefox 4+.
- */
-/* line 310, ../_sass/_normalize.scss */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
+/* Keyword.Reserved */
+/* line 26, ../_sass/_syntax.scss */
+.kt {
+  color: #007788;
 }
 
-/**
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
-/* line 320, ../_sass/_normalize.scss */
-input {
-  line-height: normal;
+/* Keyword.Type */
+/* line 27, ../_sass/_syntax.scss */
+.m {
+  color: #ff6600;
 }
 
-/**
- * It's recommended that you don't attempt to style these elements.
- * Firefox's implementation doesn't respect box-sizing, padding, or width.
- *
- * 1. Address box sizing set to `content-box` in IE 8/9/10.
- * 2. Remove excess padding in IE 8/9/10.
- */
-/* line 333, ../_sass/_normalize.scss */
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+/* Literal.Number */
+/* line 28, ../_sass/_syntax.scss */
+.s {
+  color: #d44950;
 }
 
-/**
- * Fix the cursor style for Chrome's increment/decrement buttons. For certain
- * `font-size` values of the `input`, it causes the cursor style of the
- * decrement button to change from `default` to `text`.
- */
-/* line 345, ../_sass/_normalize.scss */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
+/* Literal.String */
+/* line 29, ../_sass/_syntax.scss */
+.na {
+  color: #4f9fcf;
 }
 
-/**
- * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
- *    (include `-moz` to future-proof).
- */
-/* line 355, ../_sass/_normalize.scss */
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  /* 2 */
-  box-sizing: content-box;
+/* Name.Attribute */
+/* line 30, ../_sass/_syntax.scss */
+.nb {
+  color: #336666;
 }
 
-/**
- * Remove inner padding and search cancel button in Safari and Chrome on OS X.
- * Safari (but not Chrome) clips the cancel button when the search input has
- * padding (and `textfield` appearance).
- */
-/* line 369, ../_sass/_normalize.scss */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
+/* Name.Builtin */
+/* line 31, ../_sass/_syntax.scss */
+.nc {
+  color: #00AA88;
 }
 
-/**
- * Define consistent border, margin, and padding.
- */
-/* line 377, ../_sass/_normalize.scss */
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+/* Name.Class */
+/* line 32, ../_sass/_syntax.scss */
+.no {
+  color: #336600;
 }
 
-/**
- * 1. Correct `color` not being inherited in IE 8/9/10/11.
- * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- */
-/* line 388, ../_sass/_normalize.scss */
-legend {
-  border: 0;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+/* Name.Constant */
+/* line 33, ../_sass/_syntax.scss */
+.nd {
+  color: #9999ff;
 }
 
-/**
- * Remove default vertical scrollbar in IE 8/9/10/11.
- */
-/* line 397, ../_sass/_normalize.scss */
-textarea {
-  overflow: auto;
+/* Name.Decorator */
+/* line 34, ../_sass/_syntax.scss */
+.ni {
+  color: #999999;
 }
 
-/**
- * Don't inherit the `font-weight` (applied by a rule above).
- * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
- */
-/* line 406, ../_sass/_normalize.scss */
-optgroup {
-  font-weight: bold;
+/* Name.Entity */
+/* line 35, ../_sass/_syntax.scss */
+.ne {
+  color: #CC0000;
 }
 
-/* Tables
-   ========================================================================== */
-/**
- * Remove most spacing between table cells.
- */
-/* line 417, ../_sass/_normalize.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+/* Name.Exception */
+/* line 36, ../_sass/_syntax.scss */
+.nf {
+  color: #cc00ff;
 }
 
-/* line 423, ../_sass/_normalize.scss */
-td,
-th {
-  padding: 0;
+/* Name.Function */
+/* line 37, ../_sass/_syntax.scss */
+.nl {
+  color: #9999ff;
 }
 
-/* line 6, ../_sass/_general.scss */
-html,
-body {
-  height: 100%;
+/* Name.Label */
+/* line 38, ../_sass/_syntax.scss */
+.nn {
+  color: #00CCFF;
 }
 
-/* line 8, ../_sass/_general.scss */
-body {
-  height: 100%;
-  width: 100%;
-  display: table;
-  font-family: "Helvetica Neue", Arial, "Helvetica", sans-serif;
-  font-size: 1.125em;
-  line-height: 1.4em;
-  color: #545559;
+/* Name.Namespace */
+/* line 39, ../_sass/_syntax.scss */
+.nt {
+  color: #2f6f9f;
 }
 
-/* line 19, ../_sass/_general.scss */
-.container {
-  max-width: 40em;
-  margin: 0 auto;
+/* Name.Tag */
+/* line 40, ../_sass/_syntax.scss */
+.nv {
+  color: #003333;
 }
 
-/* line 24, ../_sass/_general.scss */
-a {
-  color: #437cc8;
-}
-/* line 27, ../_sass/_general.scss */
-a:hover {
-  text-decoration: underline;
-}
-/* line 31, ../_sass/_general.scss */
-a:visited {
-  color: #aa6dae;
+/* Name.Variable */
+/* line 41, ../_sass/_syntax.scss */
+.ow {
+  color: #000000;
 }
 
-/* line 38, ../_sass/_general.scss */
-body > header {
-  display: table-row;
-  height: 1px;
-  background-color: #f15d40;
-  padding: 2em;
-}
-/* line 45, ../_sass/_general.scss */
-body > header h1 a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-/* line 49, ../_sass/_general.scss */
-body > header h1 a:visited {
-  color: white;
+/* Operator.Word */
+/* line 42, ../_sass/_syntax.scss */
+.w {
+  color: #bbbbbb;
 }
 
-/* line 56, ../_sass/_general.scss */
-#content {
-  display: table-row;
-  height: 100%;
+/* Text.Whitespace */
+/* line 43, ../_sass/_syntax.scss */
+.mf {
+  color: #ff6600;
 }
 
-/* line 61, ../_sass/_general.scss */
-body > footer {
-  display: table-row;
-  height: 1px;
-  background-color: #aa6dae;
+/* Literal.Number.Float */
+/* line 44, ../_sass/_syntax.scss */
+.mh {
+  color: #ff6600;
+}
+
+/* Literal.Number.Hex */
+/* line 45, ../_sass/_syntax.scss */
+.mi {
+  color: #ff6600;
+}
+
+/* Literal.Number.Integer */
+/* line 46, ../_sass/_syntax.scss */
+.mo {
+  color: #ff6600;
+}
+
+/* Literal.Number.Oct */
+/* line 47, ../_sass/_syntax.scss */
+.sb {
+  color: #cc3300;
+}
+
+/* Literal.String.Backtick */
+/* line 48, ../_sass/_syntax.scss */
+.sc {
+  color: #cc3300;
+}
+
+/* Literal.String.Char */
+/* line 49, ../_sass/_syntax.scss */
+.sd {
+  color: #CC3300;
+  font-style: italic;
+}
+
+/* Literal.String.Doc */
+/* line 50, ../_sass/_syntax.scss */
+.s2 {
+  color: #cc3300;
+}
+
+/* Literal.String.Double */
+/* line 51, ../_sass/_syntax.scss */
+.se {
+  color: #CC3300;
+}
+
+/* Literal.String.Escape */
+/* line 52, ../_sass/_syntax.scss */
+.sh {
+  color: #cc3300;
+}
+
+/* Literal.String.Heredoc */
+/* line 53, ../_sass/_syntax.scss */
+.si {
+  color: #aa0000;
+}
+
+/* Literal.String.Interpol */
+/* line 54, ../_sass/_syntax.scss */
+.sx {
+  color: #cc3300;
+}
+
+/* Literal.String.Other */
+/* line 55, ../_sass/_syntax.scss */
+.sr {
+  color: #33aaaa;
+}
+
+/* Literal.String.Regex */
+/* line 56, ../_sass/_syntax.scss */
+.s1 {
+  color: #cc3300;
+}
+
+/* Literal.String.Single */
+/* line 57, ../_sass/_syntax.scss */
+.ss {
+  color: #ffcc33;
+}
+
+/* Literal.String.Symbol */
+/* line 58, ../_sass/_syntax.scss */
+.bp {
+  color: #336666;
+}
+
+/* Name.Builtin.Pseudo */
+/* line 59, ../_sass/_syntax.scss */
+.vc {
+  color: #003333;
+}
+
+/* Name.Variable.Class */
+/* line 60, ../_sass/_syntax.scss */
+.vg {
+  color: #003333;
+}
+
+/* Name.Variable.Global */
+/* line 61, ../_sass/_syntax.scss */
+.vi {
+  color: #003333;
+}
+
+/* Name.Variable.Instance */
+/* line 62, ../_sass/_syntax.scss */
+.il {
+  color: #ff6600;
+}
+
+/* Literal.Number.Integer.Long */
+/* line 66, ../_sass/_syntax.scss */
+.css .o,
+.css .o + .nt,
+.css .nt + .nt {
+  color: #999;
 }
