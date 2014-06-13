@@ -6,8 +6,10 @@ url: "http://caringbridge.github.io"
 exclude: ["vendor", ".git", ".gitignore", "Gemfile", "Gemfile.lock"]
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
 permalink: pretty
+
+paginate: 5
 
 # Frontmatter Defaults
 defaults:
