@@ -15,7 +15,7 @@ stack.
 ## Backend ##
 
 At the core of everything sits a web application that we just call `platform`.
-It's written almost entirely in [PHP][php] and leans heavily
+It's written almost entirely in [PHP][php] and leans heavily on
 [Zend Framework 2][zf2] for all the plumbing we don't want to write ourselves.
 Along with the code that powers all CaringBridge websites, `platform`
 contains:
