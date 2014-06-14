@@ -82,7 +82,8 @@ For instance, a blog post might look like this:
 }
 {% endhighlight %}
 
-Instead of having separate `tag` and `comment` tables, as you might have in
+Instead of having separate `tag` and `comment` tables (plus a join table for
+the many-to-many tag-to-post relation), as you might have in
 MySQL, the tags and comments are stored in the same record as the blog post
 itself. This way, you can avoid expensive joins and fetch everything you need
 to display a blog post with a single, simple query.
@@ -93,7 +94,7 @@ db.post.findOne({_id: ObjectId("521ccef0281f9bac1d000001")});
 
 Our friend and former coworker [Andrew Kandels][papa] created an entity
 framework called [Contain][contain] and wrote a [Data Mapper][dm] that
-allows us persist Contain entitie as Mongo documents.
+allows us persist Contain entities as Mongo documents.
 
 ## Frontend ##
 
@@ -113,8 +114,8 @@ defaults when we can.
 We rely heavily on [SASS][sass] and [Compass][compass] to build our stylesheets,
 and use Thomas McDonald's [`bootstrap-sass`][bs-sass] Ruby gem to customize
 Bootstrap's styles to meet our requirements. We were, at first, skeptical of CSS
-preprocessors, but after more than a year of use, it's nearly impossible to
-imagine how we ever got by without it. With SASS, you can define variables:
+preprocessors, but after two years of use, it's nearly impossible to
+imagine how we ever got by without them. With SASS, you can define variables:
 
 {% highlight scss %}
 $serif-font: "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
