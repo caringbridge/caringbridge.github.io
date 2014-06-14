@@ -3,6 +3,7 @@ layout: post
 title:  "How We Roll"
 date:   2014-06-12 23:13:00
 categories: practice
+author: "Stephen Van Dahm"
 ---
 
 Here at CaringBridge, our website gets about 1 million unique visitors per day.
