@@ -143,7 +143,7 @@ But that's not possible with Data Mapper, so now you have to be sure that both
 the `Post` mapper and `Comment` mapper are available wherever they might be
 needed.
 
-Sadly, We haven't seen a good way around this problem yet. Mapping relational
+Sadly, we haven't seen a good way around this problem yet. Mapping relational
 data to objects and classes is hard, and it seems that fancy design patterns
 can only get us so far.
 
