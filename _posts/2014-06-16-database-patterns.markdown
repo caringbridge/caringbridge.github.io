@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Mappers, ActiveRecord, and You
+title: ActiveRecord, Data Mapper, and You
 date: 2014-06-16
 categories: theory
 author: Stephen Van Dahm
