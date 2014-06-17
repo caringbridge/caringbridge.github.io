@@ -9,7 +9,7 @@ author: Stephen Van Dahm
 When designing a Web application, one of the most important architectural
 decisions you need to make concerns database abstraction. Slinging a bunch
 of arbitrary database queries around leads to a yucky, untestable, and
-unmaintainable mess, so most projects these days have a layer that translates
+unmaintainable mess, so most projects have a layer that translates
 between records in your datastore and objects used in your app.
 
 Martin Fowler, in [Patterns of Enterprise Architecture][paa], describes two
@@ -24,7 +24,7 @@ main design patterns that address this need:
 
 At CaringBridge, we've tried both of these approaches both with traditional
 and document-oriented databases, so we've seen the advantages and
-disadvantages of each approach.
+disadvantages of each.
 
 ## ActiveRecord ##
 
@@ -151,8 +151,8 @@ Then again, we don't use a relational database at CaringBridge.
 
 ## Data Mapper is Awesome with Document Databases ##
 
-Document-oriented databases like make the object-data mapping problem
-considerably more straightforward. In MongoDB, our database of choice, a blog
+Document-oriented databases make the object-data mapping problem
+considerably more straightforward. In MongoDB&mdash;our database of choice&mdash;a blog
 post might look like this:
 
 {% highlight js %}
