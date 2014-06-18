@@ -59,7 +59,7 @@ And it's easy enough to change a record and save it back to the database:
 
 {% highlight ruby %}
 user.nickname = 'Stewi'
-user.save # Note this method. We're not done with it yet.
+user.save
 {% endhighlight %}
 
 Behind the scenes, Rails probably generates a query similar to this one:
