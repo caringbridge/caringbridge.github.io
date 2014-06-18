@@ -1,10 +1,8 @@
 ---
 layout: page
-title: About
+title: About Us
 permalink: /about/
 ---
-
-# About Us #
 
 Hi there! We're the CaringBridge software engineering team. We'll fill this out
 later.
